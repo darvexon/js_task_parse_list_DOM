@@ -36,5 +36,5 @@ function sortList(list) {
 }
 
 function parseSalary(salary) {
-  Number(salary.replaceAll(/\D/g, ''));
+  return Number(salary.replaceAll(/\D/g, ''));
 }
