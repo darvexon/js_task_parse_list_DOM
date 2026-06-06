@@ -30,8 +30,11 @@ function getEmployees(list) {
 function sortList(list) {
   return list.sort((person1, person2) => {
     return (
-      Number(person2.dataset.salary.replaceAll(/\D/g, '')) -
-      Number(person1.dataset.salary.replaceAll(/\D/g, ''))
+      parseSalary(person2.dataset.salary) - parseSalary(person1.dataset.salary)
     );
   });
+}
+
+function parseSalary(salary) {
+  Number(salary.replaceAll(/\D/g, ''));
 }
